@@ -5151,7 +5151,7 @@ data:
                   "format": "time_series",
                   "interval": "",
                   "intervalFactor": 2,
-                  "legendFormat": "CPU {{ cpu }} - seconds spent running a process",
+                  "legendFormat": "CPU teste- seconds spent running a process",
                   "refId": "A",
                   "step": 240
                 },
@@ -5160,7 +5160,7 @@ data:
                   "format": "time_series",
                   "interval": "",
                   "intervalFactor": 2,
-                  "legendFormat": "CPU {{ cpu }} - seconds spent by processing waiting for this CPU",
+                  "legendFormat": "CPU teste - seconds spent by processing waiting for this CPU",
                   "refId": "B",
                   "step": 240
                 }
@@ -7463,7 +7463,7 @@ data:
                   "expr": "node_arp_entries{instance=\"$node\",job=\"$job\"}",
                   "format": "time_series",
                   "intervalFactor": 2,
-                  "legendFormat": "{{ device }} - ARP entries",
+                  "legendFormat": "teste - ARP entries",
                   "refId": "A",
                   "step": 4
                 }
@@ -7679,7 +7679,7 @@ data:
                   "expr": "node_network_speed_bytes{instance=\"$node\",job=\"$job\"}",
                   "format": "time_series",
                   "intervalFactor": 2,
-                  "legendFormat": "{{ device }} - Speed",
+                  "legendFormat": "teste - Speed",
                   "refId": "A",
                   "step": 4
                 }
@@ -7781,7 +7781,7 @@ data:
                   "expr": "node_network_mtu_bytes{instance=\"$node\",job=\"$job\"}",
                   "format": "time_series",
                   "intervalFactor": 2,
-                  "legendFormat": "{{ device }} - Bytes",
+                  "legendFormat": "teste - Bytes",
                   "refId": "A",
                   "step": 4
                 }
