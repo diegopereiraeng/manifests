@@ -9,7 +9,7 @@ spec:
   type: {{.Values.serviceType}}
   ports:
   - port: {{.Values.servicePort}}
-    targetPort: {{.Values.serviceTargetPort}}
+    targetPort: http-grafana
     protocol: TCP
   selector:
     app: {{ printf "%s-%s" .Values.name .Values.namespace}}

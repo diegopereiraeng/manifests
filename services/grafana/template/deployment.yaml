@@ -27,9 +27,7 @@ spec:
       containers:
       - name: {{ printf "%s-%s" .Values.name .Values.namespace}}
         image: {{.Values.image}}
-        args:
-          - --bind_ip
-          - 0.0.0.0
+        imagePullPolicy: IfNotPresent
         resources:
           requests:
             cpu: {{.Values.cpu}}
@@ -67,7 +65,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: grafana-pvc
+  name: {{.Values.name}}-pvc
 spec:
   accessModes:
     - ReadWriteOnce
