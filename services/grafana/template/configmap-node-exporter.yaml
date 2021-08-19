@@ -1579,7 +1579,7 @@ data:
               "expr": "100 - ((node_filesystem_avail_bytes{instance=\"$node\",job=\"$job\",device!~'rootfs'} * 100) / node_filesystem_size_bytes{instance=\"$node\",job=\"$job\",device!~'rootfs'})",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{mountpoint}}",
+              "legendFormat": "((mountpoint))",
               "refId": "A",
               "step": 240
             }
@@ -2204,7 +2204,7 @@ data:
                   "expr": "node_filesystem_size_bytes{instance=\"$node\",job=\"$job\",device!~'rootfs'} - node_filesystem_avail_bytes{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
                   "format": "time_series",
                   "intervalFactor": 2,
-                  "legendFormat": "{{mountpoint}}",
+                  "legendFormat": "((mountpoint))",
                   "refId": "A",
                   "step": 240
                 }
@@ -6651,7 +6651,7 @@ data:
                   "format": "time_series",
                   "hide": false,
                   "intervalFactor": 2,
-                  "legendFormat": "{{mountpoint}} - Available",
+                  "legendFormat": "((mountpoint)) - Available",
                   "metric": "",
                   "refId": "A",
                   "step": 4
@@ -6661,7 +6661,7 @@ data:
                   "format": "time_series",
                   "hide": true,
                   "intervalFactor": 2,
-                  "legendFormat": "{{mountpoint}} - Free",
+                  "legendFormat": "((mountpoint)) - Free",
                   "refId": "B",
                   "step": 2
                 },
@@ -6670,7 +6670,7 @@ data:
                   "format": "time_series",
                   "hide": true,
                   "intervalFactor": 2,
-                  "legendFormat": "{{mountpoint}} - Size",
+                  "legendFormat": "((mountpoint)) - Size",
                   "refId": "C",
                   "step": 2
                 }
@@ -6774,7 +6774,7 @@ data:
                   "format": "time_series",
                   "hide": false,
                   "intervalFactor": 2,
-                  "legendFormat": "{{mountpoint}} - Free file nodes",
+                  "legendFormat": "((mountpoint)) - Free file nodes",
                   "refId": "A",
                   "step": 4
                 }
@@ -6988,7 +6988,7 @@ data:
                   "format": "time_series",
                   "hide": false,
                   "intervalFactor": 2,
-                  "legendFormat": "{{mountpoint}} - File nodes total",
+                  "legendFormat": "((mountpoint)) - File nodes total",
                   "refId": "A",
                   "step": 4
                 }
@@ -7096,7 +7096,7 @@ data:
                   "expr": "node_filesystem_readonly{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
                   "format": "time_series",
                   "intervalFactor": 2,
-                  "legendFormat": "{{mountpoint}} - ReadOnly",
+                  "legendFormat": "((mountpoint)) - ReadOnly",
                   "refId": "A",
                   "step": 4
                 },
@@ -7105,7 +7105,7 @@ data:
                   "format": "time_series",
                   "interval": "",
                   "intervalFactor": 2,
-                  "legendFormat": "{{mountpoint}} - Device error",
+                  "legendFormat": "((mountpoint)) - Device error",
                   "refId": "B",
                   "step": 4
                 }
@@ -7894,7 +7894,7 @@ data:
                   "format": "time_series",
                   "interval": "",
                   "intervalFactor": 2,
-                  "legendFormat": "CPU {{cpu}} - Processed",
+                  "legendFormat": "CPU ((cpu)) - Processed",
                   "refId": "A",
                   "step": 4
                 },
@@ -7903,7 +7903,7 @@ data:
                   "format": "time_series",
                   "interval": "",
                   "intervalFactor": 2,
-                  "legendFormat": "CPU {{cpu}} - Dropped",
+                  "legendFormat": "CPU ((cpu)) - Dropped",
                   "refId": "B",
                   "step": 4
                 }
@@ -8009,7 +8009,7 @@ data:
                   "expr": "node_network_up{operstate=\"up\",instance=\"$node\",job=\"$job\"}",
                   "format": "time_series",
                   "intervalFactor": 2,
-                  "legendFormat": "{{interface}} - Operational state UP",
+                  "legendFormat": "((interface)) - Operational state UP",
                   "refId": "A",
                   "step": 4
                 },
@@ -8129,7 +8129,7 @@ data:
                   "hide": false,
                   "interval": "",
                   "intervalFactor": 2,
-                  "legendFormat": "{{collector}} - Scrape duration",
+                  "legendFormat": "((collector)) - Scrape duration",
                   "refId": "A",
                   "step": 4
                 }
@@ -8231,7 +8231,7 @@ data:
                   "hide": false,
                   "interval": "",
                   "intervalFactor": 2,
-                  "legendFormat": "{{collector}} - Scrape success",
+                  "legendFormat": "((collector)) - Scrape success",
                   "refId": "A",
                   "step": 4
                 },
@@ -8241,7 +8241,7 @@ data:
                   "hide": false,
                   "interval": "",
                   "intervalFactor": 2,
-                  "legendFormat": "{{collector}} - Scrape textfile error (1 = true)",
+                  "legendFormat": "((collector)) - Scrape textfile error (1 = true)",
                   "refId": "B",
                   "step": 4
                 }
