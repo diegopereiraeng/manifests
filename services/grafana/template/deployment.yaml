@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Values.name}}
+  labels:
+    app: {{.Values.name}}
+    app.kubernetes.io/name: {{.Values.name}}
+    app.kubernetes.io/component: {{.Values.name}}
+spec:
+  replicas: {{int .Values.replicas}}
+  selector:
+    matchLabels:
+      app: {{.Values.name}}
+      app.kubernetes.io/name: {{.Values.name}}
+      app.kubernetes.io/component: {{.Values.name}}
+  template:
+    metadata:
+      labels:
+        app: {{.Values.name}}
+        app.kubernetes.io/name: {{.Values.name}}
+        app.kubernetes.io/component: {{.Values.name}}
+    spec:
+      securityContext:
+        fsGroup: 472
+        supplementalGroups:
+          - 0
+      containers:
+      - name: {{.Values.name}}
+        image: {{.Values.image}}
+        args:
+          - --bind_ip
+          - 0.0.0.0
+        resources:
+          requests:
+            cpu: {{.Values.cpu}}
+            memory: {{.Values.memory}}
+        ports:
+        - containerPort: {{.Values.servicePort}}
+          name: http-{{.Values.name}}
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /robots.txt
+            port: {{.Values.servicePort}}
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 30
+          successThreshold: 1
+          timeoutSeconds: 2
+        livenessProbe:
+          failureThreshold: 3
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          successThreshold: 1
+          tcpSocket:
+            port: {{.Values.servicePort}}
+          timeoutSeconds: 1
+        volumeMounts:
+          - mountPath: /var/lib/grafana
+            name: {{.Values.name}}-pv
+      volumes:
+        - name: {{.Values.name}}-pv
+          persistentVolumeClaim:
+            claimName: {{.Values.name}}-pvc
