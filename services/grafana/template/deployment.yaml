@@ -63,3 +63,14 @@ spec:
         - name: {{.Values.name}}-pv
           persistentVolumeClaim:
             claimName: {{.Values.name}}-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: grafana-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
