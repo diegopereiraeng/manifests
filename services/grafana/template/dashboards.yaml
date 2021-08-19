@@ -1,6 +1,11 @@
 # Inspired by https://grafana.com/grafana/dashboards/8685
 ---
 apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-dashboards-k8s-cluster-summary
+  labels:
+    app: {{ printf "%s-%s" .Values.name .Values.namespace}}
 data:
   k8s-cluster-summary.json: |
     {
@@ -2692,15 +2697,15 @@ data:
       "uid": "taQlRuxik",
       "version": 7
     }
-kind: ConfigMap
-metadata:
-  name: grafana-dashboards-k8s-cluster-summary
-  labels:
-    app: {{ printf "%s-%s" .Values.name .Values.namespace}}
----
+
 # Inspired by https://grafana.com/grafana/dashboards/1860
 ---
 apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-dashboards-node-exporter-full
+  labels:
+    app: {{ printf "%s-%s" .Values.name .Values.namespace}}
 data:
   node-exporter-full.json: |
     {
@@ -11121,8 +11126,4 @@ data:
       "uid": "rYdddlPWk",
       "version": 47
     }
-kind: ConfigMap
-metadata:
-  name: grafana-dashboards-node-exporter-full
-  labels:
-    app: {{ printf "%s-%s" .Values.name .Values.namespace}}
+
