@@ -1464,7 +1464,7 @@ data:
               "expr": "irate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[5m])*8",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "recv {{device}}",
+              "legendFormat": "recv ((device))",
               "refId": "A",
               "step": 240
             },
@@ -1472,7 +1472,7 @@ data:
               "expr": "irate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[5m])*8",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "trans {{device}} ",
+              "legendFormat": "trans ((device)) ",
               "refId": "B",
               "step": 240
             }
@@ -2089,7 +2089,7 @@ data:
                   "expr": "irate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[5m])*8",
                   "format": "time_series",
                   "intervalFactor": 2,
-                  "legendFormat": "{{device}} - Receive",
+                  "legendFormat": "((device)) - Receive",
                   "refId": "A",
                   "step": 240
                 },
@@ -2097,7 +2097,7 @@ data:
                   "expr": "irate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[5m])*8",
                   "format": "time_series",
                   "intervalFactor": 2,
-                  "legendFormat": "{{device}} - Transmit",
+                  "legendFormat": "((device)) - Transmit",
                   "refId": "B",
                   "step": 240
                 }
@@ -2396,14 +2396,14 @@ data:
                 {
                   "expr": "irate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[5m])",
                   "intervalFactor": 4,
-                  "legendFormat": "{{device}} - Reads completed",
+                  "legendFormat": "((device)) - Reads completed",
                   "refId": "A",
                   "step": 480
                 },
                 {
                   "expr": "irate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[5m])",
                   "intervalFactor": 2,
-                  "legendFormat": "{{device}} - Writes completed",
+                  "legendFormat": "((device)) - Writes completed",
                   "refId": "B",
                   "step": 240
                 }
@@ -2537,7 +2537,7 @@ data:
                   "format": "time_series",
                   "hide": false,
                   "intervalFactor": 2,
-                  "legendFormat": "{{device}} - Successfully read bytes",
+                  "legendFormat": "((device)) - Successfully read bytes",
                   "refId": "A",
                   "step": 240
                 },
@@ -2546,7 +2546,7 @@ data:
                   "format": "time_series",
                   "hide": false,
                   "intervalFactor": 2,
-                  "legendFormat": "{{device}} - Successfully written bytes",
+                  "legendFormat": "((device)) - Successfully written bytes",
                   "refId": "B",
                   "step": 240
                 }
@@ -2655,7 +2655,7 @@ data:
                   "format": "time_series",
                   "hide": false,
                   "intervalFactor": 2,
-                  "legendFormat": "{{device}} - Time spent doing I/Os",
+                  "legendFormat": "((device)) - Time spent doing I/Os",
                   "refId": "A",
                   "step": 240
                 }
@@ -5364,14 +5364,14 @@ data:
                 {
                   "expr": "irate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\"}[5m])",
                   "intervalFactor": 4,
-                  "legendFormat": "{{device}} - Reads completed",
+                  "legendFormat": "((device)) - Reads completed",
                   "refId": "A",
                   "step": 8
                 },
                 {
                   "expr": "irate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\"}[5m])",
                   "intervalFactor": 2,
-                  "legendFormat": "{{device}} - Writes completed",
+                  "legendFormat": "((device)) - Writes completed",
                   "refId": "B",
                   "step": 4
                 }
@@ -5560,7 +5560,7 @@ data:
                   "expr": "irate(node_disk_read_bytes_total{instance=\"$node\",job=\"$job\"}[5m])",
                   "format": "time_series",
                   "intervalFactor": 4,
-                  "legendFormat": "{{device}} - Read bytes",
+                  "legendFormat": "((device)) - Read bytes",
                   "refId": "A",
                   "step": 8
                 },
@@ -5568,7 +5568,7 @@ data:
                   "expr": "irate(node_disk_written_bytes_total{instance=\"$node\",job=\"$job\"}[5m])",
                   "format": "time_series",
                   "intervalFactor": 2,
-                  "legendFormat": "{{device}} - Written bytes",
+                  "legendFormat": "((device)) - Written bytes",
                   "refId": "B",
                   "step": 4
                 }
@@ -5759,7 +5759,7 @@ data:
                   "expr": "irate(node_disk_read_time_seconds_total{instance=\"$node\",job=\"$job\"}[5m])",
                   "hide": false,
                   "intervalFactor": 4,
-                  "legendFormat": "{{device}} - Read time",
+                  "legendFormat": "((device)) - Read time",
                   "refId": "A",
                   "step": 8
                 },
@@ -5767,7 +5767,7 @@ data:
                   "expr": "irate(node_disk_write_time_seconds_total{instance=\"$node\",job=\"$job\"}[5m])",
                   "hide": false,
                   "intervalFactor": 2,
-                  "legendFormat": "{{device}} - Write time",
+                  "legendFormat": "((device)) - Write time",
                   "refId": "B",
                   "step": 4
                 }
@@ -5953,7 +5953,7 @@ data:
                 {
                   "expr": "irate(node_disk_io_time_weighted_seconds_total{instance=\"$node\",job=\"$job\"}[5m])",
                   "intervalFactor": 4,
-                  "legendFormat": "{{device}} - IO time weighted",
+                  "legendFormat": "((device)) - IO time weighted",
                   "refId": "A",
                   "step": 8
                 }
@@ -6143,14 +6143,14 @@ data:
                 {
                   "expr": "irate(node_disk_reads_merged_total{instance=\"$node\",job=\"$job\"}[5m])",
                   "intervalFactor": 2,
-                  "legendFormat": "{{device}} - Read merged",
+                  "legendFormat": "((device)) - Read merged",
                   "refId": "A",
                   "step": 4
                 },
                 {
                   "expr": "irate(node_disk_writes_merged_total{instance=\"$node\",job=\"$job\"}[5m])",
                   "intervalFactor": 2,
-                  "legendFormat": "{{device}} - Write merged",
+                  "legendFormat": "((device)) - Write merged",
                   "refId": "B",
                   "step": 4
                 }
@@ -6336,7 +6336,7 @@ data:
                 {
                   "expr": "irate(node_disk_io_time_seconds_total{instance=\"$node\",job=\"$job\"}[5m])",
                   "intervalFactor": 4,
-                  "legendFormat": "{{device}} - IO time",
+                  "legendFormat": "((device)) - IO time",
                   "refId": "A",
                   "step": 8
                 },
@@ -6344,7 +6344,7 @@ data:
                   "expr": "irate(node_disk_discard_time_seconds_total{instance=\"$node\",job=\"$job\"}[5m])",
                   "interval": "",
                   "intervalFactor": 4,
-                  "legendFormat": "{{device}} - discard time",
+                  "legendFormat": "((device)) - discard time",
                   "refId": "B",
                   "step": 8
                 }
@@ -6530,7 +6530,7 @@ data:
                 {
                   "expr": "irate(node_disk_io_now{instance=\"$node\",job=\"$job\"}[5m])",
                   "intervalFactor": 4,
-                  "legendFormat": "{{device}} - IO now",
+                  "legendFormat": "((device)) - IO now",
                   "refId": "A",
                   "step": 8
                 }
@@ -7234,7 +7234,7 @@ data:
                   "format": "time_series",
                   "interval": "",
                   "intervalFactor": 2,
-                  "legendFormat": "{{device}} - Receive",
+                  "legendFormat": "((device)) - Receive",
                   "refId": "A",
                   "step": 4
                 },
@@ -7243,7 +7243,7 @@ data:
                   "format": "time_series",
                   "interval": "",
                   "intervalFactor": 2,
-                  "legendFormat": "{{device}} - Transmit",
+                  "legendFormat": "((device)) - Transmit",
                   "refId": "B",
                   "step": 4
                 }
@@ -7354,7 +7354,7 @@ data:
                   "expr": "irate(node_network_receive_errs_total{instance=\"$node\",job=\"$job\"}[5m])",
                   "format": "time_series",
                   "intervalFactor": 2,
-                  "legendFormat": "{{device}} - Receive errors",
+                  "legendFormat": "((device)) - Receive errors",
                   "refId": "A",
                   "step": 4
                 },
@@ -7362,7 +7362,7 @@ data:
                   "expr": "irate(node_network_transmit_errs_total{instance=\"$node\",job=\"$job\"}[5m])",
                   "format": "time_series",
                   "intervalFactor": 2,
-                  "legendFormat": "{{device}} - Rransmit errors",
+                  "legendFormat": "((device)) - Rransmit errors",
                   "refId": "B",
                   "step": 4
                 }
@@ -8017,7 +8017,7 @@ data:
                   "expr": "node_network_carrier{instance=\"$node\",job=\"$job\"}",
                   "format": "time_series",
                   "instant": false,
-                  "legendFormat": "{{device}} - Physical link state",
+                  "legendFormat": "((device)) - Physical link state",
                   "refId": "B"
                 }
               ],
