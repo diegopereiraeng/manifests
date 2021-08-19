@@ -418,7 +418,7 @@ kind: ConfigMap
 metadata:
   name: grafana-dashboard-providers
   labels:
-    app: grafana
+    app: {{ printf "%s-%s" .Values.name .Values.namespace}}
 data:
   dashboardproviders.yaml: |
     apiVersion: 1
