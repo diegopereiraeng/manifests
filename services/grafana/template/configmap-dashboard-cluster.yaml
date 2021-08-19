@@ -888,7 +888,7 @@ data:
               "instant": true,
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "{{ deployment }}",
+              "legendFormat": "{{template.New("").Parse("{{`{{ deployment }}`}}")}}",
               "refId": "A"
             }
           ],
