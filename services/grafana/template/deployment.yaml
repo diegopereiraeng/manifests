@@ -1,31 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{.Values.name}}
+  name: {{ printf "%s-%s" .Values.name .Values.namespace}}
   labels:
-    app: {{.Values.name}}
-    app.kubernetes.io/name: {{.Values.name}}
-    app.kubernetes.io/component: {{.Values.name}}
+    app: {{ printf "%s-%s" .Values.name .Values.namespace}}
+    app.kubernetes.io/name: {{ printf "%s-%s" .Values.name .Values.namespace}}
+    app.kubernetes.io/component: {{ printf "%s-%s" .Values.name .Values.namespace}}
 spec:
   replicas: {{int .Values.replicas}}
   selector:
     matchLabels:
-      app: {{.Values.name}}
-      app.kubernetes.io/name: {{.Values.name}}
-      app.kubernetes.io/component: {{.Values.name}}
+      app: {{ printf "%s-%s" .Values.name .Values.namespace}}
+      app.kubernetes.io/name: {{ printf "%s-%s" .Values.name .Values.namespace}}
+      app.kubernetes.io/component: {{ printf "%s-%s" .Values.name .Values.namespace}}
   template:
     metadata:
       labels:
-        app: {{.Values.name}}
-        app.kubernetes.io/name: {{.Values.name}}
-        app.kubernetes.io/component: {{.Values.name}}
+        app: {{ printf "%s-%s" .Values.name .Values.namespace}}
+        app.kubernetes.io/name: {{ printf "%s-%s" .Values.name .Values.namespace}}
+        app.kubernetes.io/component: {{ printf "%s-%s" .Values.name .Values.namespace}}
     spec:
       securityContext:
         fsGroup: 472
         supplementalGroups:
           - 0
       containers:
-      - name: {{.Values.name}}
+      - name: {{ printf "%s-%s" .Values.name .Values.namespace}}
         image: {{.Values.image}}
         args:
           - --bind_ip
