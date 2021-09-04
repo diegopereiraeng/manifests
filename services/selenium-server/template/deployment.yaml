@@ -23,9 +23,6 @@ spec:
       containers:
       - name: {{.Values.name}}
         image: {{.Values.image}}
-        args:
-          - --bind_ip
-          - 0.0.0.0
         resources:
           requests:
             cpu: {{.Values.cpu}}
