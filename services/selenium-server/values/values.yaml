@@ -1,7 +1,7 @@
 name: selenium-server
 component: functional-test
 
-replicas: 2
+replicas: 1
 
 cpu: 500m
 memory: 512Mi
