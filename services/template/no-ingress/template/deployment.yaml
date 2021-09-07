@@ -23,6 +23,7 @@ spec:
       containers:
       - name: {{.Values.name}}
         image: {{.Values.image}}
+        imagePullPolicy: {{.Values.imagePolicy}}
         resources:
           requests:
             cpu: {{.Values.cpu}}
