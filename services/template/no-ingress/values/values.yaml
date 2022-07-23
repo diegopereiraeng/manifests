@@ -29,6 +29,6 @@ serviceTargetPort: <+pipeline.variables.serviceTarget>
 # Both are added to the container environment in podSpec as envFrom source.
 env:
   config:
-    key1: value1
+    FF_SDK_KEY: 8294952c-865c-4a63-81ef-a4c0521232d8
   secrets:
-    key2: value2
+    MONGO_AUTH: <+secrets.getValue("account.mongodbauth")>
