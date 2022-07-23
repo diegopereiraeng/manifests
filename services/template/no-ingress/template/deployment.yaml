@@ -44,6 +44,12 @@ spec:
       - name: {{.Values.name}}
         image: {{.Values.image}}
         imagePullPolicy: {{.Values.imagePolicy}}
+        resources:
+          requests:
+            cpu: {{.Values.cpu}}
+            memory: {{.Values.memory}}
+        ports:
+        - containerPort: {{.Values.servicePort}}
         {{- if or .Values.env.config .Values.env.secrets}}
         envFrom:
         {{- if .Values.env.config}}
@@ -55,9 +61,3 @@ spec:
             name: {{.Values.name}}
         {{- end}}
         {{- end}}
-        resources:
-          requests:
-            cpu: {{.Values.cpu}}
-            memory: {{.Values.memory}}
-        ports:
-        - containerPort: {{.Values.servicePort}}
