@@ -30,7 +30,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /{{.Values.virtualPath}}/(.*)
+      - path: /{{.Values.sitePath}}/(.*)
         pathType: Prefix
         backend:
           service:
