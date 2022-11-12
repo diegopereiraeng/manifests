@@ -37,3 +37,6 @@ spec:
             name: {{ printf "%s-%s" .Values.name .Values.namespace}}
             port:
               number: {{.Values.servicePort}}
+    {{- if .Values.defineHost}}
+    host: {{.Values.defineHost}}
+    {{- end}}
