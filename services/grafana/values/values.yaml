@@ -26,6 +26,8 @@ serviceType: ClusterIP
 servicePort: 3000
 serviceTargetPort: 3000
 
+defineHost: "ff.harness-demo.site"
+
 # Specify all environment variables to be added to the container.
 # The following two maps, config and secrets, are put into a ConfigMap
 # and a Secret, respectively.
